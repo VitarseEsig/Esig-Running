@@ -1,2 +1,2 @@
 # Esig-Running
-Site web de l'association Esig'Runnig. Il s'agit d'un projet d'études.
+Site web de l'association Esig'Running. Il s'agit d'un projet d'études.
