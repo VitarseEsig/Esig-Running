@@ -1,14 +1,11 @@
 <header>
-    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg light">
         <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="./accueil.php">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./connexion.php">Connexion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./inscription.php">Inscription</a></li>
-                </ul>
-            </div>
-            
+            <a class="navbar-brand" id="logo" href="#">
+                <img src="./assets/img/logo-esigelec.png" alt="logo esigelec" class="d-inline-block align text-top">
+                <h1 class="titre-logo">Esig'Running</h1>
+                <img src="./assets/img/bonhomme running.png" alt="homme qui court">
+            </a>
         </div>
         
     </nav>
