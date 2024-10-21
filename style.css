@@ -8,6 +8,7 @@ body{
 
 #divNav1{
     justify-content: center;
+    margin-left: 37.5vw;
 }
 
 #logo {
@@ -34,4 +35,18 @@ body{
 #logo-man{
     max-width: 70px;
     max-height: 70px;
+}
+.img-connexion {
+    width: 45px;
+    height: 45px;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 2px;
+    background: rgba(232, 229, 229, 0.492);
+}
+#compte-div{
+    margin-right: 2vh;
+}
+#compte{
+    font-size: 1.0rem;
 }
