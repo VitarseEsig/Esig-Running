@@ -1,7 +1,7 @@
 <?php
     $titre_page = "Connexion";
     include 'header.inc.php';
-    include 'menu.inc.php';
+    include 'navbars.inc.php';
 ?>
 
 <h1>Page de connexion</h1>
