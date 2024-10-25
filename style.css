@@ -127,6 +127,12 @@ p{
     left: 69%;
     z-index: 1;
 }
+.superposition-enfant-bg-2{
+    position: absolute;
+    top: 135%;
+    left: 35%;
+    z-index: 1;
+}
 
 .superposition-enfant{
     position: relative;

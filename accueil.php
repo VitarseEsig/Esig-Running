@@ -21,6 +21,7 @@
                 <p>Courir n'a jamais été aussi amusant ! Esig'Running est le club d'athlétisme de l'ESIGELEC pour ses étudiants et personnel. Parce qu'on ne peut travailler avec des personnes malades, vous devez prendre soin de votre corps ! Rejoignez la course !</p>
             </div>
             <img src="./assets/img/Design special.png" alt="design special" class="superposition-enfant-bg img-fluid">
+            <img src="./assets/img/chaussure.png" alt="chaussure peu opaque" class="img-fluid superposition-enfant-bg-2">
         </div>
     </div>
     
