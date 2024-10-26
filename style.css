@@ -4,6 +4,9 @@
 }
 body{
     font-family: "Myriad-Pro-Regular";
+    max-width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 #divNav1{
@@ -14,6 +17,7 @@ body{
 .margin-debut{
     margin-top: 3vh;
     margin-bottom: 9vh;
+    text-align: center;
 }
 
 #logo {
@@ -67,7 +71,8 @@ body{
     font-size: 1.0rem;
 }
 h2{
-    font-size: 2.5rem;
+    font-size: 3.7vw;
+    transform: scaleY(1.3);
 }
 
 .ombre-bleue{
@@ -81,9 +86,8 @@ h2{
                 0px 1px 0px rgb(0, 110, 255),
                 0px -1px 0px rgb(0, 110, 255),
                 4px 1px 3px rgb(2,2,104);
-    font-size: 3.5rem;
-    transform: scaleY(1.3);
-    text-align: center;
+    /* font-size: 3.5rem; */
+    
 
 }
 
@@ -105,33 +109,48 @@ p{
     font-size: 1.6vw;
     padding-left: 3%;
     padding-right: 3%;
-    color: rgb(27, 6, 146);
-    text-shadow: 1px 1px 0px rgb(3, 74, 168),
+    color: rgb(2, 2, 104);
+    /* text-shadow: 1px 1px 0px rgb(3, 74, 168),
                 -1px -1px 0px rgb(3, 74, 168),
                 1px -1px 0px rgb(3, 74, 168),
                 -1px 1px 0px rgb(3, 74, 168),
                 1px 0px 0px rgb(3, 74, 168),
                 -1px 0px 0px rgb(3, 74, 168),
                 0px 1px 0px rgb(3, 74, 168),
-                0px -1px 0px rgb(3, 74, 168);
+                0px -1px 0px rgb(3, 74, 168); */
+    text-shadow: 0.04vw 0.04vw 0vw rgb(0, 110, 255),
+                -0.04vw -0.04vw 0vw rgb(0, 110, 255),
+                0.04vw -0.04vw 0vw rgb(0, 110, 255),
+                -0.04vw 0.04vw 0vw rgb(0, 110, 255),
+                0.04vw 0vw 0vw rgb(0, 110, 255),
+                -0.04vw 0vw 0vw rgb(0, 110, 255),
+                0vw 0.04vw 0vw rgb(0, 110, 255),
+                0vw -0.04vw 0vw rgb(0, 110, 255);
     transform: scaleY(1.1);
 }
 .superposition-parent{
     position: relative;
     display: inline-block;
+    /* border: 1px solid blue; */
 }
 
 .superposition-enfant-bg{
     position: absolute;
     top: 25%;
-    left: 69%;
+    left: 65%;
     z-index: 1;
+    /* border: 1px solid red; */
+
 }
 .superposition-enfant-bg-2{
     position: absolute;
     top: 135%;
     left: 35%;
     z-index: 1;
+    max-width: 20vw;
+    max-height: 20vw;
+    /* border: 1px solid yellow; */
+
 }
 
 .superposition-enfant{
@@ -175,4 +194,24 @@ p{
     /* p{
         font-size: 0.5rem;
     } */
+}
+
+/* #section-debut{
+    border : 1px solid green;
+} */
+
+.margin-haut{
+    margin-top: 20vw;
+}
+
+.cellule-2{
+    width: 35vw;
+    height: 35vw;
+    padding: 1.5vw;
+    margin-left: 3vw;
+}
+.margin-h2{
+    margin-left: 1.1vw;
+    margin-bottom: 3vw;
+    margin-top: 2vw;
 }
