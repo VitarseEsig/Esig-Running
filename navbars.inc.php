@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="d-flex flex-fill justify-content-center">
-            <a href="#" class="nav-link">Entraînements</a>
+            <a href="#section-entrainements" class="nav-link">Entraînements</a>
         </div>
     </nav>
 </header>
