@@ -15,8 +15,8 @@ body{
     margin-left: 39vw;
 }
 .margin-debut{
-    margin-top: 3vh;
-    margin-bottom: 9vh;
+    margin-top: 4vw;
+    margin-bottom: 9vw;
     text-align: center;
 }
 
@@ -353,6 +353,49 @@ h4{
     height: 5vw;
 }
 .position-btn-top{
-    top: 770%;
-    left: 90%;
+    align-self: end;
+}
+
+@media (max-width: 992px){
+    .carre-noir{
+        width: 8.943vw;
+        height: 8.943vw;
+    }
+    
+    .margin-carre-haut{
+        margin-left: 8.943vw;
+    }
+    
+    /* #divNav1{
+        margin-left: 30vw;
+    } */
+    
+}
+@media (max-width: 768px){
+    .carre-noir{
+        width: 8.87vw;
+        height: 8.87vw;
+    }
+    
+    .margin-carre-haut{
+        margin-left: 8.87vw;
+    }
+    /* #divNav1{
+        margin-left: 20vw;
+    } */
+   
+}
+@media (max-width: 576px){
+    .carre-noir{
+        width: 8.81vw;
+        height: 8.81vw;
+    }
+    
+    .margin-carre-haut{
+        margin-left: 8.81vw;
+    }
+    /* #divNav1{
+        margin-left: 30vw;
+    } */
+   
 }

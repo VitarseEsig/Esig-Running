@@ -101,7 +101,7 @@
         <h2 id="texte-fin" class="ombre-bleue superposition-parent">BREF... <br>REJOIGNEZ NOUS ET <br>FAITES TRANSPIRER MEME <br>VOTRE CERVEAU !</h2>
     </div>
 
-    <a href="#logo-esig" class="superposition-enfant-absolute position-btn-top"><button type="button" class="btn btn-light bouton-top"><img src="./assets/img/fleche haut.png" alt="flèche vers le haut" id="img-fleche"></button></a>
+    <a href="#logo-esig" class="position-btn-top"><button type="button" class="btn btn-light bouton-top"><img src="./assets/img/fleche haut.png" alt="flèche vers le haut" id="img-fleche"></button></a>
     
     <div id="damier" class="d-flex flex-column g-0">
         <div class="row align-items-start g-0 g-sm-0">
