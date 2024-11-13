@@ -399,3 +399,25 @@ h4{
     } */
    
 }
+
+.centre{
+    display: flex;
+    justify-content: center;
+}
+.align-centre{
+    align-items: center;
+}
+#bienvenue{
+    margin-top: 3vw;
+}
+#tab-bord{
+    margin-top: 5vw;
+}
+#entrainements-a-venir{
+    background: lightgray;
+    border: 1px solid black;
+}
+#btn-rouge{
+    background: red;
+    border: 1px solid black;
+}
