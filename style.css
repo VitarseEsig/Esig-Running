@@ -416,20 +416,32 @@ h3{
     margin-top: 5vw;
 }
 #entrainements-a-venir{
-    background: lightgray;
+    background: rgba(204, 204, 204, 0.36);
     border: 1px solid black;
+    border-radius: 1.5vw 1.5vw 0 0;
     margin: 0;
 }
 #btn-rouge{
-    background: red;
     border: 1px solid black;
+    border-radius: 1.5vw 1.5vw 0 0;
+    /* border-radius: 2vw 2vw 0 0; */
 }
 #div-training{
     border: 1px solid black;
-    background: rgb(219, 217, 217);
+    background: rgba(204, 204, 204, 0.36);
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+    border-radius: 0 2vw 2vw 2vw;
     /* max-width: 80vw; */
 }
 .relief-training{
-    background: gray;
+    background: rgba(230,230,230);
     border: 1px solid lightgray;
+    border-radius: 1vw;
+    padding-top: 0.8vw;
+    padding-bottom: 0.8vw;
+}
+h5{
+    color: rgb(2, 2, 104);
+
 }
