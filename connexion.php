@@ -1,16 +1,16 @@
 <?php
     session_start();
-    $titre_page = "Connexion";
-    $_SESSION['utilisateur']="Arthur";
+    $_SESSION['user_id']= 1;
+    $titre_page = "Connexion";    
     
-    if(!isset($_SESSION['utilisateur'])) {
+    if(!isset($_SESSION['user_id'])) {
         include 'header.inc.php';
         include 'navbars.inc.php';
     }
     else {
         header ( "Location: ./compte.php" );
     }
-    
+   
 ?>
 
 <h1>Page de connexion</h1>
