@@ -1,6 +1,4 @@
--- Création de la base de données
-CREATE DATABASE IF NOT EXISTS gestion_running;
-USE gestion_running;
+USE bdd_7_4;
 
 -- Table Utilisateur
 CREATE TABLE Utilisateur (
@@ -16,7 +14,7 @@ CREATE TABLE Utilisateur (
 -- Table Membre (pour gérer les membres de l'association)
 CREATE TABLE Membre (
     id_membre INT PRIMARY KEY AUTO_INCREMENT,
-    utilisateur_id INT NOT NULL,
+    utilisateur_id INT,
     date_promotion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(id_utilisateur) ON DELETE CASCADE
 );
@@ -31,9 +29,9 @@ CREATE TABLE Entrainement (
     heure TIME NOT NULL,
     parcours_image VARCHAR(255),
     nb_max_participants INT NOT NULL,
-    createur_id INT NOT NULL,
+    createur_id INT,
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (createur_id) REFERENCES Membre(utilisateur_id) ON DELETE SET NULL
+    FOREIGN KEY (createur_id) REFERENCES Membre(id_membre) ON DELETE SET NULL
 );
 
 -- Table Inscription (pour la relation n-n entre Utilisateur et Entrainement)
@@ -59,9 +57,10 @@ CREATE TABLE Photo (
 -- Table Historique_Entrainement (bonus : pour suivre la participation des utilisateurs aux entraînements passés)
 CREATE TABLE Historique_Entrainement (
     id_historique INT PRIMARY KEY AUTO_INCREMENT,
-    utilisateur_id INT NOT NULL,
-    entrainement_id INT NOT NULL,
+    utilisateur_id INT,
+    entrainement_id INT,
     date_participation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(id_utilisateur) ON DELETE CASCADE,
     FOREIGN KEY (entrainement_id) REFERENCES Entrainement(id_entrainement) ON DELETE SET NULL
 );
+
