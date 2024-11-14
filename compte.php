@@ -21,17 +21,18 @@
 
             <div class='row offset-2'>
 
-                <div class='col-6 g-0 offset-2 d-flex align-items-center justify-content-center' id='entrainements-a-venir'>
-                    <h3 class='ombre-bleue'>Entraînements à venir</h3>
+                <div class='col-7 g-0 offset-2 d-flex align-items-center justify-content-start' id='entrainements-a-venir'>
+                    <h4 class='offset-4'>Entraînements à venir</h4>
+                    <button class='offset-3' id='btn-horloge'><img src='./assets/img/horloge.png' alt='horloge bleue' id='horloge'></button>
                 </div>
 
                 <div class='col-3 g-0'>
-                    <button type='button' class='btn btn-danger' id='btn-rouge'><h3>Se désinscrire</h3></button>
+                    <button type='button' class='btn btn-danger' id='btn-rouge'><h4>Se désinscrire</h4></button>
                 </div>
 
             </div>
-            <div class='row'>
-                <div class='row col-8  g-0 gap-5 offset-2 justify-content-evenly align-items-center' id='div-training'>
+            <div class='row offset-2'>
+                <div class='row col-9  g-0 gap-5 justify-content-evenly align-items-center' id='div-training'>
 
                     <div class='col-5 d-flex flex-column align-items-start relief-training'>
                         <h5>Lundi 11 novembre 2024 à 16h30</h5>
@@ -71,9 +72,26 @@
                 </div>
                 <div id='div-vide'><div>
             </div>
-           
-
           </section>";
+
+          echo "<section id='inscriptions'>
+
+                    <div class='d-flex justify-content-center align-items-center' id='div-titre-inscription'>
+                        <h2>S'inscrire à un entraînement</h2>
+                    </div>
+                        
+                    <h4 class='offset-2'>Trier par :</h4>
+                    <form action='#'>
+                        <input type='date' id='dateInput' name='date'>
+                        <input type='time' id='heure' name='heure'>
+                        <select id='type' name='type'>
+                            <option selected>Type</option>
+                            <option value='1'>Footing</option>
+                            <option value='2'>Fractionné</option>
+                        </select>
+                        <input type='submit' value='Trier'>
+                    </form>
+                </section>";
 ?>
 <!-- <h2 class="ombre-bleue">Bonjour .$utilisateur. !</h2> -->
 
