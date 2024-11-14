@@ -427,12 +427,42 @@ h3{
     /* border-radius: 2vw 2vw 0 0; */
 }
 #div-training{
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
     background: rgba(204, 204, 204, 0.36);
     padding-top: 2.5vw;
     padding-bottom: 2.5vw;
-    border-radius: 0 2vw 2vw 2vw;
+    padding-right: 0;
+    border-radius: 0 0vw 0vw 2vw;
+    max-height: 21vw;
+    overflow-y: scroll;
+    /* scrollbar-color: rgba(230,230,230) white; */
     /* max-width: 80vw; */
+}
+#div-training::-webkit-scrollbar{
+    width: 1vw;
+}
+#div-training::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+#div-training::-webkit-scrollbar-thumb{
+    background: rgba(230,230,230);
+    border-radius: 20px;
+    height: 1px;
+}
+#div-vide{
+    width: 2vw;
+    height:21vw;
+    background: rgba(204, 204, 204, 0.36);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 0vw 3vw 3vw 0vw;
+    padding: 0;
 }
 .relief-training{
     background: rgba(230,230,230);
