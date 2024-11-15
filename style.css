@@ -106,7 +106,7 @@ h2{
     box-shadow: 15px 4px 1px rgba(128, 128, 128, 0.267);
 }
 
-p,.style-categorie{
+p,h4{
     font-size: 1.6vw;
     padding-left: 3%;
     padding-right: 3%;
@@ -470,7 +470,7 @@ h3{
 }
 .relief-training{
     background: rgba(230,230,230);
-    border: 2px solid white;
+    border: 2px solid lightgray;
     box-shadow: inset 0px 1px 2px black;
     border-radius: 1vw;
     padding-top: 0.8vw;
