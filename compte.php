@@ -9,7 +9,7 @@ include 'header.inc.php';
 include 'navbars.inc.php';
 
 // Vérifier si l'utilisateur est connecté
-if (isset($_SESSION['id_utilisateur'])) {
+if (isset($_SESSION['user_id'])) {
     // Récupérer les informations de l'utilisateur depuis la session
     $prenom = $_SESSION['prenom'];
     $nom = $_SESSION['nom'];
@@ -23,7 +23,7 @@ echo "<div class="."centre"." id="."bienvenue".">
 
 echo "<section class='d-flex flex-column'>
 
-    div class= 'row align-items-start' id='tab-bord'>
+    <div class='row align-items-start' id='tab-bord'>
         <h2 class='ombre-bleue offset-1'>Tableau de bord</h2>
     </div>
 

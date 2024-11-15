@@ -106,7 +106,7 @@ h2{
     box-shadow: 15px 4px 1px rgba(128, 128, 128, 0.267);
 }
 
-p,h4{
+p,.style-categorie{
     font-size: 1.6vw;
     padding-left: 3%;
     padding-right: 3%;
