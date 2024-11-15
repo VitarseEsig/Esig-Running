@@ -74,23 +74,40 @@
             </div>
           </section>";
 
-          echo "<section id='inscriptions'>
+          echo "<section id='inscriptions' class='col-9 offset-2 d-flex flex-column gap-4'>
 
-                    <div class='d-flex justify-content-center align-items-center' id='div-titre-inscription'>
-                        <h2>S'inscrire à un entraînement</h2>
+                    <div class='d-flex justify-content-center align-items-center col-8 offset-1' id='div-titre-inscription'>
+                        <h3 class='col-8 offset-1'>S'inscrire à un entraînement</h3>
                     </div>
                         
-                    <h4 class='offset-2'>Trier par :</h4>
-                    <form action='#'>
-                        <input type='date' id='dateInput' name='date'>
-                        <input type='time' id='heure' name='heure'>
-                        <select id='type' name='type'>
-                            <option selected>Type</option>
-                            <option value='1'>Footing</option>
-                            <option value='2'>Fractionné</option>
-                        </select>
-                        <input type='submit' value='Trier'>
-                    </form>
+                    <h4 class='offset-0'>Trier par :</h4>
+                    <div class='row gap-5'>
+                        <form action='#' class='d-flex flex-column col-6 gap-2 offset-1' id='tri'>
+                            <div class='row gap-4' id='tri-row'>
+                                <div class='d-flex col-5 align-items-center justify-content-center '>
+                                    <h5 class='margin-tri'>Date</h5>
+                                    <input type='date' id='dateInput' name='date' placeholder='Date'>
+                                </div>
+                                <div class='d-flex col-4 align-items-center'>
+                                    <h5 class='margin-tri'>Heure</h5>
+                                    <input type='time' id='heure' name='heure'>
+                                </div>
+                                <select id='type' name='type' class='col-2'>
+                                    <option selected>Type</option>
+                                    <option value='1'>Footing</option>
+                                    <option value='2'>Fractionné</option>
+                                </select>
+                            </div>
+                            <input type='submit' value='Trier' class='col-10 offset-1' id='btn-trier'>
+                        </form>
+                        <form class='d-flex me-2 col-3 offset-0' role='search' action='#' id='recherche'>
+                            <input class='form-control' type='search' placeholder='Rechercher'>
+                            <button class='btn btn-outline-success' type='submit'><img src='./assets/img/loupe inclinee.png' id='loupe' alt='loupe' class='img-fluid'></button>
+                        </form>
+                    </div>
+                    <div class='d-flex flex-column'>
+                        // a suivre
+                    </div>
                 </section>";
 ?>
 <!-- <h2 class="ombre-bleue">Bonjour .$utilisateur. !</h2> -->

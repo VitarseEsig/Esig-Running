@@ -500,3 +500,36 @@ h5{
     border-radius: 5vw;
     background: rgba(230,230,230);
 }
+.margin-tri{
+    margin-right: 0.7vw;
+}
+#tri input,select{
+    background: rgba(230,230,230);
+    border: 0;
+}
+
+#tri-row div{
+    background: rgba(230,230,230);
+}
+#tri-row h5{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#loupe{
+    width: 2vw;
+    height: 2vw;
+}
+#recherche input{
+    border-radius: 1vw 0 0 1vw;
+}
+#recherche button{
+    border-radius: 0 1vw 1vw 0;
+    background: rgb(230,230,230);
+    border: 0;
+}
+#btn-trier:hover{
+    background: grey;
+}
+#recherche button:hover{
+    background: grey;
+}
