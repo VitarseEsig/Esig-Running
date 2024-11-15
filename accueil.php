@@ -54,7 +54,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center superposition-parent">
         <div id="VMA" class="cellule-texte cellule-entrainement d-flex flex-column align-items-center superposition-enfant">
             <h3 class="ombre-bleue margin-entrainements-h3">Spécial VMA</h3>
-         <h4 class="margin-entrainements-h4">Catégorie : Fractionné</h4>
+         <h4 class="margin-entrainements-h4 style-categorie">Catégorie : Fractionné</h4>
            <p>
               L'entraînement de VMA (Vitesse Maximale Aérobie) est conçu pour améliorer votre capacité à courir plus vite sur de longues distances. Il alterne des périodes d'effort intense, où vous courez à votre votre vitesse maximale, et des temps de récupération. Les exercices incluent des répétitions de courtes distances (ex : 200m, 400m), ou des intervalles de 30/30 (30 secondes de course rapide, 30 secondes de récupération). Cet entraînement optimise votre endurance et votre vitesse, idéal pour progresser et performer lors de vos courses. Rejoignez-nous pour booster vos performances !
           </p>
@@ -65,13 +65,13 @@
 
         <div id="Fartlek" class="cellule-texte cellule-entrainement d-flex flex-column align-items-center superposition-enfant-absolute">
             <h3 class="ombre-bleue margin-entrainements-h3">Fartlek</h3>
-            <h4 class="margin-entrainements-h4">Catégorie : Fractionné</h4>
+            <h4 class="margin-entrainements-h4 style-categorie">Catégorie : Fractionné</h4>
             <p>L'entraînement Fartlek, qui signifie "jeu de vitesse" en suédois, est une méthode variée et ludique pour améliorer à la fois votre endurance et votre vitesse. Il consiste à alterner des phases de course rapide et des phases de récupération active, sans suivre un schéma strict. Contrairement aux intervalles classiques, le Fartlek se base sur vos sensations et l'environnement : accélérez en montée, ralentissez en descente, ou alternez des sprints et des joggings selon votre forme. C'est un entraînement flexible qui casse la monotonie et vous aide à progresser tout en vous amusant.</p>
         </div>
 
         <div id="aisance" class="cellule-texte cellule-entrainement d-flex flex-column align-items-center superposition-enfant-absolute">
             <h3 class="ombre-bleue margin-entrainements-h3">Footing en aisance</h3>
-            <h4 class="margin-entrainements-h4">Catégorie : Footing</h4>
+            <h4 class="margin-entrainements-h4 style-categorie">Catégorie : Footing</h4>
             <p>Le footing en aisance est une séance de course à un rythme confortable, où vous devez être 
             capable de parler sans difficulté pendant l'effort. Cet entraînement, souvent réalisé à allure 
             modérée, permet de travailler l'endurance de base tout en récupérant des séances plus intenses. 
@@ -85,7 +85,7 @@
 
         <div id="actif" class="cellule-texte cellule-entrainement d-flex flex-column align-items-center superposition-enfant-absolute">
             <h3 class="ombre-bleue margin-entrainements-h3">Footing actif</h3>
-            <h4 class="margin-entrainements-h4">Catégorie : Footing</h4>
+            <h4 class="margin-entrainements-h4 style-categorie">Catégorie : Footing</h4>
             <p>Le footing actif est un entraînement à allure modérée à soutenue, situé entre le footing en 
             aisance et les séances plus intenses. L'objectif est de courir à un rythme dynamique, mais 
             toujours contrôlé, tout en restant à une intensité qui vous permet de maintenir l'effort sur une 
