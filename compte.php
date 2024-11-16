@@ -9,7 +9,7 @@ include 'header.inc.php';
 include 'navbars.inc.php';
 
 // Vérifier si l'utilisateur est connecté
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['id_utilisateur'])) {
     // Récupérer les informations de l'utilisateur depuis la session
     $prenom = $_SESSION['prenom'];
     $nom = $_SESSION['nom'];

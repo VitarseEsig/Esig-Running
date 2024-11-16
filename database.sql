@@ -63,4 +63,3 @@ CREATE TABLE Historique_Entrainement (
     FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(id_utilisateur) ON DELETE CASCADE,
     FOREIGN KEY (entrainement_id) REFERENCES Entrainement(id_entrainement) ON DELETE SET NULL
 );
-

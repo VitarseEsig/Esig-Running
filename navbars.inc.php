@@ -17,19 +17,19 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <div class="d-inline-flex flex-column-reverse" id="compte-div">
                     <!-- Bouton Compte toujours affiché -->
-                    <a href="./connexion.php" class="nav-link d-flex flex-column align-items-center">
-                        <img src="./assets/img/connexion.png" alt="logo connexion" class="img-connexion img-fluid">
-                        <h2 id="compte">Compte</h2>
-                    </a>
 
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION['id_utilisateur']) && $titre_page=="Compte"): ?>
                         <!-- Affiche le bouton "Se déconnecter" si l'utilisateur est connecté -->
                         <form action="deconnexion.php" method="post" style="display:inline;">
                             <button type="submit" class="btn btn-outline-danger">Se déconnecter</button>
                         </form>
                     <?php else: ?>
                         <!-- Bouton Se connecter si l'utilisateur n'est pas connecté -->
-                        <a href="./connexion.php" class="btn btn-outline-primary">Se connecter</a>
+                        <!-- <a href="./connexion.php" class="btn btn-outline-primary">Se connecter</a> -->
+                        <a href="./connexion.php" class="nav-link d-flex flex-column align-items-center">
+                            <img src="./assets/img/connexion.png" alt="logo connexion" class="img-connexion img-fluid">
+                            <h2 id="compte">Compte</h2>
+                        </a>
                     <?php endif; ?>
                 </div>
             </div>

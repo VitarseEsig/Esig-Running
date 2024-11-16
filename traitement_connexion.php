@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['prenom'] = $prenom;
 
             // Rediriger vers la page d'accueil ou tableau de bord
-            header("Location: compte.php");
+            header("Location: ./compte.php");
             exit();
         } else {
             // Mot de passe incorrect
