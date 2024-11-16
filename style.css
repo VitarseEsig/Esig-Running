@@ -494,11 +494,20 @@ h5{
     height: 2.65vw;
 }
 #inscriptions{
-    margin-top: 5vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+    border-radius: 6vw;
+    height: 60vw;
+    justify-self: center;
+}
+#inscription h2,h3,h4,select,input{
+    color: rgb(2, 2, 104);
 }
 #div-titre-inscription{
     border-radius: 5vw;
     background: rgba(230,230,230);
+    margin-top: 2.5vw;
+    margin-bottom: 3vw;
 }
 .margin-tri{
     margin-right: 0.7vw;
@@ -516,8 +525,12 @@ h5{
     margin-bottom: 0;
 }
 #loupe{
-    width: 2vw;
+    width: 2.2vw;
     height: 2vw;
+}
+#recherche{
+    height: 3vw;
+
 }
 #recherche input{
     border-radius: 1vw 0 0 1vw;
@@ -532,4 +545,44 @@ h5{
 }
 #recherche button:hover{
     background: grey;
+}
+#div-liste-training{
+    width: 52.5vw;
+    overflow-y: scroll;
+    height: 30vw;
+    padding-right: 2.5vw;
+}
+/* #div-liste-training h3{
+    margin-left: 2%;
+} */
+
+.btn-inscription-training{
+    background: rgba(230,230,230);
+    width: 100%;
+    padding: 3%;
+    border :0;
+}
+.btn-inscription-training:hover{
+    background: rgba(204,204,204);
+}
+
+#div-liste-training::-webkit-scrollbar{
+    width: 1vw;
+}
+#div-liste-training::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+#div-liste-training::-webkit-scrollbar-thumb{
+    background: rgba(230,230,230);
+    border-radius: 20px;
+    height: 1px;
+}
+#inscriptions{
+    background: rgba(204,204,204,0.36);
+}
+#div-tri{
+    margin-bottom: 3vw;
 }
