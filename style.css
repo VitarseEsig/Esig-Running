@@ -106,7 +106,7 @@ h2{
     box-shadow: 15px 4px 1px rgba(128, 128, 128, 0.267);
 }
 
-p,.style-categorie{
+#section-debut p , #section-milieu p, #section-entrainements p, .style-categorie{
     font-size: 1.6vw;
     padding-left: 3%;
     padding-right: 3%;
@@ -585,4 +585,11 @@ h5{
 }
 #div-tri{
     margin-bottom: 3vw;
+}
+.p-modal p{
+    color: rgb(2,2,104);
+    font-size: 1.2vw;
+}
+.modal-titre{
+    color: rgb(2,2,104);
 }

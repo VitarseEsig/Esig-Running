@@ -226,8 +226,7 @@ $liste_entrainements=[
             <div class='d-flex flex-column offset-0 gap-5' id='div-liste-training'>";
             // il faut pouvoir récupérer l'id de l'entrainement et l'ajouter dans la table inscriptions pour s'inscrire à un entrainement
                 foreach($liste_entrainements as $entrainement => $details){
-                    echo "<form method='POST' action='#'>
-                    <button type='submit' class='d-flex align-items-center btn-inscription-training'>";
+                    echo "<button type='button' data-bs-toggle='modal' data-bs-target='#details".$entrainement."' class='d-flex align-items-center btn-inscription-training'>";
                     if(isset($details['titre'])){
                         echo "<h3>".$details['titre']."</h3>";
                     }
@@ -235,8 +234,35 @@ $liste_entrainements=[
                         echo "<h4 class='offset-1'>".$details["date"]." à ".$details['heure']."</h4>";
                     }
                     echo "</button>
-                          <input type='hidden' name='id_entrainement_choisi' value='".$entrainement."'>
-                    </form>";
+                        <div class='modal fade' id='details".$entrainement."' tabindex='-1' aria-labelledby='exampleModalLabel".$entrainement."' aria-hidden='true'>
+                            <div class='modal-dialog modal-dialog-scrollable'>
+                                <div class='modal-content'>
+                                    <div class='modal-header'>
+                                        <h1 class='modal-title fs-5 modal-titre' id='exampleModalLabel".$entrainement."'>".$details['titre']."</h1>
+                                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                    </div>
+                                    <div class='modal-body p-modal'>
+                                        <h4>Date : ".$details['date']."</h4>
+                                        <h4>Heure : ".$details['heure']."</h4>
+                                        <div class='d-flex flex-column'>
+                                            <h4>Description : <h4>
+                                            <p>".$details['description']."</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class='modal-footer'>
+                                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Annuler</button>
+                                        <form method='POST' action='#'>
+                                            <button type='submit' class='btn btn-primary'>S'inscrire</button>
+                                            <input type='hidden' name='id_entrainement_choisi' value='".$entrainement."'>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+/* Pour le form ayant la méthode POST, ce form renvoie l'id de l'entrainement auquel l'utilisateur souhaite s'inscrire. Dans action j'ai mis un # pour ne rien faire, mais tu devras changer ça par le nom du fichier de traitement qui associera l'id utilisateur à l'id d'entrainement (via la méthode POST. exemple : INSERT INTO inscriptions VALUES($_SESSION['id_utilisateur'],$_POST['id_entrainement_choisi'])); dans la table inscriptions de la bdd
+*/
+                        //   <input type='hidden' name='id_entrainement_choisi' value='".$entrainement."'>"
                 }
                 // <div class='d-flex align-items-center div-inscription-training'>
                 //     <h3>Fartlek</h3>
