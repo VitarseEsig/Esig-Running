@@ -24,7 +24,7 @@ CREATE TABLE Entrainement (
     id_entrainement INT PRIMARY KEY AUTO_INCREMENT,
     titre VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    categorie ENUM('débutant', 'intermédiaire', 'avancé') NOT NULL,
+    categorie ENUM('Footing', 'Fractionné') NOT NULL,
     date DATE NOT NULL,
     heure TIME NOT NULL,
     parcours_image VARCHAR(255),
