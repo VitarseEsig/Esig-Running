@@ -493,7 +493,7 @@ h5{
     width: 2.65vw;
     height: 2.65vw;
 }
-#inscriptions{
+#ajoutEntrainement{
     margin-top: 15vw;
     margin-bottom: 15vw;
     border-radius: 6vw;
@@ -586,7 +586,7 @@ h5{
     border-radius: 20px;
     height: 1px;
 }
-#inscriptions{
+#ajoutEntrainement{
     background: rgba(204,204,204,0.36);
 }
 #div-tri{

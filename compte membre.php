@@ -288,17 +288,12 @@ $liste_entrainements=[
 ];
 
 
-    echo "<section id='inscriptions' class='col-9 offset-0 d-flex flex-column gap-4 align-items-center'>
+    echo "<section id='ajoutEntrainement' class='col-9 offset-0 d-flex flex-column gap-4 align-items-center'>
 
             <div class='d-flex justify-content-center align-items-center col-8 offset-0' id='div-titre-inscription'>
                 <h3 class='col-8 offset-1'>Ajouter un entraînement</h3>
             </div>
             <form method='POST'action='ajout_entrainement.php'>
-                <select id='categorieEntrainement' name='categorieEntrainement'>
-                    <option selected>Catégorie</option>
-                    <option value='1'>Footing</option>
-                    <option value='2'>Fractionné</option>
-                </select>
                 <select id='titreEntrainement' name='titreEntrainement'>
                     <option selected>Titre de l'entrainement</option>
                     <option value='1'>Fartlek</option>
@@ -318,11 +313,18 @@ $liste_entrainements=[
                     <h4>Nombre maximum de participants</h4>
                     <input type='number' name='maxParticipantsEntrainement' id='maxParticipantsEntrainement'>
                 </div>
-
+                <button type='submit' class='btn btn-primary'>Ajouter l'entraînement</button>
             </form>
+            ";
+            // if(isset($_SESSION['message'])){
+            //     echo "<div class='alert ".$_SESSION['couleurMessage']."'>"
+            //                 .$_SESSION['message']."
+            //             </div>";
+            //     unset($_SESSION['message']);
+            //     unset($_SESSION['couleurMessage']);
+            // }
 
-
-        </section>";
+        echo"</section>";
 ?>
 
 
