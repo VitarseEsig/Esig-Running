@@ -8,15 +8,15 @@
             <button class='offset-3' id='btn-horloge' type='button' data-bs-toggle='modal' data-bs-target='#modalHistorique'><img src='./assets/img/horloge.png' alt='horloge bleue' id='horloge'></button>
 
             <div class='modal fade' id='modalHistorique' tabindex='-1' aria-labelledby='modalHistoriqueLabel'>
-                <div class='modal-dialog modal-dialog-scrollable'>
+                <div class='modal-dialog modal-lg modal-dialog-scrollable'>
                     <div class='modal-content'>
                         <div class="modal-header">
                             <h1 class='modal-title fs-5' id='modalHistoriqueLabel'>Historique des entraînements</h1>
                             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </div>
-                        <div class="modal-body d-flex flex-column gap-1">
+                        <div class="modal-body d-flex flex-column gap-3">
                         <?php foreach ($historique_entrainement as $details): ?>
-                            <div class='d-flex align-items-start'>
+                            <div class='d-flex align-items-start gap-5'>
                                 <?php if (!empty($details['date']) && !empty($details['heure'])): ?>
                                     <h5><?= htmlspecialchars($details['date']) ?> à <?= htmlspecialchars($details['heure']) ?></h5>
                                 <?php endif; ?>
@@ -26,7 +26,10 @@
                                 <?php if (isset($details['participants'])): ?>
                                     <h5>Participants : <?= htmlspecialchars($details['participants']) ?></h5>
                                 <?php endif; ?>
+                                </div>
                         <?php endforeach; ?>
+                            
+                                
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>

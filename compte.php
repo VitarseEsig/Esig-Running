@@ -45,22 +45,22 @@ if(isset($_SESSION['messagePromotion'])){
 
 // Récupérer les entraînements à venir de l'utilisateur connecté
 $sql = "
-    SELECT 
-        e.id_entrainement,
-        e.titre,
-        DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
-        TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
-        (SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants
-    FROM 
-        Inscription ins
-    INNER JOIN 
-        Entrainement e ON ins.entrainement_id = e.id_entrainement
-    WHERE 
-        ins.utilisateur_id = ?
-    AND 
-        e.date >= CURDATE()
-    ORDER BY 
-        e.date ASC, e.heure ASC
+SELECT 
+e.id_entrainement,
+e.titre,
+DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
+TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
+(SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants
+FROM 
+Inscription ins
+INNER JOIN 
+Entrainement e ON ins.entrainement_id = e.id_entrainement
+WHERE 
+ins.utilisateur_id = ?
+AND 
+CONCAT(e.date, ' ', e.heure) >= NOW()
+ORDER BY 
+e.date ASC, e.heure ASC
 ";
 
 // Préparer la requête
@@ -94,20 +94,20 @@ $stmt->close();
 <?php
 // Préparer la requête pour l'affichage des entraînements disponibles
 $sql = "
-    SELECT 
-        e.id_entrainement,
-        e.titre,
-        DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
-        TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
-        (SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants,
-        e.description,
-        e.categorie
-    FROM 
-        Entrainement e
-    WHERE 
-        e.date >= CURDATE()
-    ORDER BY 
-        e.date ASC, e.heure ASC
+SELECT  
+e.id_entrainement,
+e.titre,
+DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
+TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
+(SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants,
+e.description,
+e.categorie
+FROM 
+Entrainement e
+WHERE 
+CONCAT(e.date, ' ', e.heure) >= NOW()
+ORDER BY 
+e.date ASC, e.heure ASC
 ";
 
 $result = $conn->query($sql);
@@ -126,22 +126,22 @@ if ($result && $result->num_rows > 0) {
 }
 
 $sql = "
-    SELECT 
-        e.id_entrainement,
-        e.titre,
-        DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
-        TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
-        (SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants
-    FROM 
-        Inscription ins
-    INNER JOIN 
-        Entrainement e ON ins.entrainement_id = e.id_entrainement
-    WHERE 
-        ins.utilisateur_id = ?
-    AND 
-        e.date < CURDATE()
-    ORDER BY 
-        e.date ASC, e.heure ASC
+SELECT 
+e.id_entrainement,
+e.titre,
+DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
+TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
+(SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants
+FROM 
+Inscription ins
+INNER JOIN 
+Entrainement e ON ins.entrainement_id = e.id_entrainement
+WHERE 
+ins.utilisateur_id = ?
+AND 
+CONCAT(e.date, ' ', e.heure) < NOW()
+ORDER BY 
+e.date ASC, e.heure ASC
 ";
 
 // Préparer la requête
