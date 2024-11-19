@@ -5,7 +5,35 @@
     <div class='row offset-2'>
         <div class='col-9 g-0 offset-2 d-flex align-items-center justify-content-start' id='entrainements-a-venir'>
             <h4 class='offset-4'>Entraînements à venir</h4>
-            <button class='offset-3' id='btn-horloge'><img src='./assets/img/horloge.png' alt='horloge bleue' id='horloge'></button>
+            <button class='offset-3' id='btn-horloge' type='button' data-bs-toggle='modal' data-bs-target='#modalHistorique'><img src='./assets/img/horloge.png' alt='horloge bleue' id='horloge'></button>
+
+            <div class='modal fade' id='modalHistorique' tabindex='-1' aria-labelledby='modalHistoriqueLabel'>
+                <div class='modal-dialog modal-dialog-scrollable'>
+                    <div class='modal-content'>
+                        <div class="modal-header">
+                            <h1 class='modal-title fs-5' id='modalHistoriqueLabel'>Historique des entraînements</h1>
+                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column gap-1">
+                        <?php foreach ($historique_entrainement as $details): ?>
+                            <div class='d-flex align-items-start'>
+                                <?php if (!empty($details['date']) && !empty($details['heure'])): ?>
+                                    <h5><?= htmlspecialchars($details['date']) ?> à <?= htmlspecialchars($details['heure']) ?></h5>
+                                <?php endif; ?>
+                                <?php if (!empty($details['titre'])): ?>
+                                    <h5><?= htmlspecialchars($details['titre']) ?></h5>
+                                <?php endif; ?>
+                                <?php if (isset($details['participants'])): ?>
+                                    <h5>Participants : <?= htmlspecialchars($details['participants']) ?></h5>
+                                <?php endif; ?>
+                        <?php endforeach; ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class='row offset-2'>

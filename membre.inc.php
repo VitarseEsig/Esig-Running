@@ -68,8 +68,8 @@ echo "<section class='d-flex flex-column'>
     <div class='row offset-2'>
         <div class='row col-9  g-0 gap-5 justify-content-evenly align-items-center' id='div-training'>";
                 foreach($liste_entrainements as $entrainement => $details) {
-                    $sql = "SELECT id_utilisateur, nom, prenom FROM utilisateur
-                            INNER JOIN inscription
+                    $sql = "SELECT id_utilisateur, nom, prenom FROM Utilisateur
+                            INNER JOIN Inscription
 	                            ON id_utilisateur = utilisateur_id
     	                        WHERE entrainement_id = $entrainement";
                     $result = $conn->query($sql);
@@ -104,12 +104,14 @@ echo "<section class='d-flex flex-column'>
                                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                     </div>
                                     <div class='modal-body d-flex flex-column gap-3'>";
+                                    if(isset($liste_participants[$entrainement])){
                                         foreach($liste_participants[$entrainement] as $participant => $nomComplet){
                                             echo "
                                                 <div class='d-flex align-items-center justify-content-between div-participant'>
                                                     <h4>".$nomComplet."</h4>
                                                 </div>";
                                         }
+                                    }
                                     echo "</div>
                                     <div class='modal-footer'>
                                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Annuler</button>
@@ -170,7 +172,7 @@ echo "<section class='d-flex flex-column'>
 
         echo"</section>";
 
-        $sql = "SELECT id_utilisateur, nom, prenom FROM utilisateur
+        $sql = "SELECT id_utilisateur, nom, prenom FROM Utilisateur
     	        WHERE role != 'membre_association'";
                     $result = $conn->query($sql);
                     // $liste_participants = [];
@@ -203,7 +205,7 @@ echo "<section class='d-flex flex-column'>
                                     <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                 </div>
                                 <div class='modal-body'>
-                                    <h4>Etes vous sûr de vouloir promouvoir $nomComplet ?</h4>
+                                    <h4>Etes vous sûr de vouloir promouvoir $nomEntier ?</h4>
                                 </div>
                                 <div class='modal-footer'>
                                     <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Annuler</button>

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Vérifier si l'email existe déjà
-    $stmt = $conn->prepare("SELECT * FROM utilisateur WHERE email = ?");
+    $stmt = $conn->prepare("SELECT * FROM Utilisateur WHERE email = ?");
     if ($stmt === false) {
         die('Erreur de préparation de la requête : ' . $conn->error); // Afficher l'erreur de préparation
     }
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $date_creation = date('Y-m-d H:i:s');
 
         // Insertion du nouvel utilisateur
-        $stmt = $conn->prepare("INSERT INTO utilisateur (date_creation, email, mot_de_passe, nom, prenom) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO Utilisateur (date_creation, email, mot_de_passe, nom, prenom) VALUES (?, ?, ?, ?, ?)");
         if ($stmt === false) {
             die('Erreur de préparation de la requête : ' . $conn->error); // Afficher l'erreur de préparation
         }
@@ -49,8 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
             $message = "Inscription réussie ! Vous pouvez maintenant vous connecter.";
+            $_SESSION['messageConnexion']=$message;
+            $_SESSION['couleurMessageConnexion'] = "alert-success";
+            header("Location: ./connexion.php");
         } else {
             $message = "Une erreur est survenue lors de l'inscription : " . $stmt->error;
+            $_SESSION['messageInscription']=$message;
+            $_SESSION['couleurMessageInscription'] = "alert-danger";
+            header("Location: ./inscription.php");
         }
     }
 
@@ -58,8 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $conn->close();
 
-    // Rediriger vers la page d'inscription avec un message
-    header("Location: inscription.php?message=" . urlencode($message));
     exit();
 }
 ?>

@@ -7,6 +7,15 @@
         include 'header.inc.php';
         include 'navbars.inc.php';
         echo"<h1>Page de connexion</h1>";
+        if(isset($_SESSION['messageConnexion'])){
+            echo "<div class='alert ".$_SESSION['couleurMessageConnexion']."'>"
+                    .$_SESSION['messageConnexion']."
+                </div>";
+            unset($_SESSION['messageConnexion']);
+            unset($_SESSION['couleurMessageConnexion']);
+        }
+
+
         if (isset($message) && !empty($message)){
             echo"<p style='color: red;'>$message</p>";
         }

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Vérifier si l'email existe dans la base de données
-    $stmt = $conn->prepare("SELECT id_utilisateur, mot_de_passe, nom, prenom, role FROM utilisateur WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id_utilisateur, mot_de_passe, nom, prenom, role FROM Utilisateur WHERE email = ?");
     if ($stmt === false) {
         die('Erreur de préparation de la requête : ' . $conn->error);
     }
@@ -55,6 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Email non trouvé
         $message = "Email non trouvé. Veuillez vérifier votre email ou vous inscrire.";
+        $_SESSION['messageConnexion']=$message;
+        $_SESSION['couleurMessageConnexion'] = "alert-danger";
+        header("Location: ./connexion.php");
     }
 
     // Fermeture du statement

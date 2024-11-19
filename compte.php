@@ -58,7 +58,7 @@ $sql = "
     WHERE 
         ins.utilisateur_id = ?
     AND 
-        e.date <= CURDATE()
+        e.date >= CURDATE()
     ORDER BY 
         e.date ASC, e.heure ASC
 ";
@@ -105,7 +105,7 @@ $sql = "
     FROM 
         Entrainement e
     WHERE 
-        e.date <= CURDATE()
+        e.date >= CURDATE()
     ORDER BY 
         e.date ASC, e.heure ASC
 ";
@@ -124,6 +124,53 @@ if ($result && $result->num_rows > 0) {
         ];
     }
 }
+
+$sql = "
+    SELECT 
+        e.id_entrainement,
+        e.titre,
+        DATE_FORMAT(e.date, '%W %d %M %Y') AS date_formattee,
+        TIME_FORMAT(e.heure, '%Hh%i') AS heure_formattee,
+        (SELECT COUNT(*) FROM Inscription i WHERE i.entrainement_id = e.id_entrainement) AS nb_participants
+    FROM 
+        Inscription ins
+    INNER JOIN 
+        Entrainement e ON ins.entrainement_id = e.id_entrainement
+    WHERE 
+        ins.utilisateur_id = ?
+    AND 
+        e.date < CURDATE()
+    ORDER BY 
+        e.date ASC, e.heure ASC
+";
+
+// Préparer la requête
+$stmt = $conn->prepare($sql);
+if (!$stmt) {
+    die("Erreur lors de la préparation de la requête : " . $conn->error);
+}
+
+// Lier les paramètres
+$stmt->bind_param("i", $id_utilisateur);
+
+// Exécuter la requête
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Stocker les résultats dans un tableau
+$historique_entrainement = [];
+while ($row = $result->fetch_assoc()) {
+    $historique_entrainement[] = [
+        'id' => $row['id_entrainement'],
+        'titre' => $row['titre'],
+        'date' => $row['date_formattee'],
+        'heure' => $row['heure_formattee'],
+        'participants' => $row['nb_participants']
+    ];
+}
+
+$stmt->close();
+
 ?>
 
 

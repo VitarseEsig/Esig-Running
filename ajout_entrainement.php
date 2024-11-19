@@ -51,7 +51,7 @@ switch($titre){
 }
 echo $categorie;
 
-$stmt = $conn->prepare( "INSERT INTO entrainement (date_creation, titre, categorie, description, date, heure, nb_max_participants) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare( "INSERT INTO Entrainement (date_creation, titre, categorie, description, date, heure, nb_max_participants) VALUES (?, ?, ?, ?, ?, ?, ?)");
 if ($stmt === false) {
     echo "probleme";
     die('Erreur de préparation de la requête : ' . $conn->error); // Afficher l'erreur de préparation
