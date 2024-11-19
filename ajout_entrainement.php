@@ -1,8 +1,10 @@
 <?php
 // Paramètres de connexion à la base de données
+session_start();
 require_once("param.inc.php"); 
 // Création de la connexion avec mysqli
 $conn = new mysqli($host,$login,$password,$dbname);
+$conn->set_charset('utf8mb4');
 
 // Vérification de la connexion
 if ($conn->connect_error) {
@@ -33,8 +35,8 @@ switch($titre){
     case '3' :
         $titre = "Footing en aisance";
         $description = "Le footing en aisance est une séance de course à un rythme confortable, où vous devez être capable de parler sans difficulté pendant l'effort. Cet entraînement, souvent réalisé à allure modérée, permet de travailler l'endurance de base tout en récupérant des séances plus intenses. Il est idéal pour renforcer votre condition physique sans forcer et pour habituer votre corps à courir plus longtemps sans stress. Accessible à tous les niveaux, le footing en aisance est essentiel pour progresser durablement et courir avec plaisir.";
-        break;
         $categorie="Footing";
+        break;
 
     case '4' :
         $titre = "Footing actif";
@@ -44,31 +46,32 @@ switch($titre){
     default:
         $titre = "Entraînement inconnu";
         $description ="Pas de description";
-        $categorie="Footing";
+        $categorie='Footing';
         break;
 }
-echo $titre;
+echo $categorie;
 
-$stmt = $conn->prepare("INSERT INTO Entrainement (createur_id, date_creation, titre, categorie, description, date, heure, nb_max_participants) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-if (!$stmt) {
-    die('Erreur de préparation de la requête : ' . $conn->error); // Afficher l'erreur de préparation
+$stmt = $conn->prepare( "INSERT INTO entrainement (date_creation, titre, categorie, description, date, heure, nb_max_participants) VALUES (?, ?, ?, ?, ?, ?, ?)");
+if ($stmt === false) {
     echo "probleme";
+    die('Erreur de préparation de la requête : ' . $conn->error); // Afficher l'erreur de préparation
 }
-$stmt->bind_param("issssssi",$_SESSION['id_utilisateur'],$date_creation,$titre,$categorie,$description,$date,$heure,$maxParticipants);
+$stmt->bind_param("ssssssi",$date_creation,$titre,$categorie,$description,$date,$heure,$maxParticipants);
 
 if($stmt->execute()){
     echo "reussite";
-    // $_SESSION['message'] = "Entrainement ajouté avec succès !";
-    // $_SESSION['couleurMessage'] = "alert-success";
+    $_SESSION['message'] = "Entrainement ajouté avec succès !";
+    $_SESSION['couleurMessage'] = "alert-success";
     
 }
 else{
-    // $_SESSION['message'] = "Echec de l'ajout de l'entraînement !";
-    // $_SESSION['couleurMessage'] = "alert-danger";
-    echo "echec";
+    var_dump($_SESSION['id_utilisateur']);
+    $_SESSION['message'] = "Echec de l'ajout de l'entraînement !";
+    $_SESSION['couleurMessage'] = "alert-danger";
+    echo "Erreur d'exécution : " . $stmt->error;
 }
 $stmt->close();
 $conn->close();
-// header("Location: ./compte membre.php#ajoutEntrainement");
+header("Location: ./compte membre.php#ajoutEntrainement");
 
 ?>

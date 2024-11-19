@@ -1,4 +1,11 @@
-USE bdd_7_4;
+-- USE bdd_7_4;
+-- ALTER DATABASE bdd_7_4
+-- CHARACTER SET utf8mb4
+-- COLLATE utf8mb4_general_ci;
+CREATE DATABASE gestion_running
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
 
 -- Table Utilisateur
 CREATE TABLE Utilisateur (
@@ -24,7 +31,7 @@ CREATE TABLE Entrainement (
     id_entrainement INT PRIMARY KEY AUTO_INCREMENT,
     titre VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    categorie ENUM('Footing', 'Fractionné') NOT NULL,
+    categorie VARCHAR(50) NOT NULL,
     date DATE NOT NULL,
     heure TIME NOT NULL,
     parcours_image VARCHAR(255),
