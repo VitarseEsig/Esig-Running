@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Vérifier si l'email existe dans la base de données
-    $stmt = $conn->prepare("SELECT id_utilisateur, mot_de_passe, nom, prenom FROM utilisateur WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id_utilisateur, mot_de_passe, nom, prenom, role FROM utilisateur WHERE email = ?");
     if ($stmt === false) {
         die('Erreur de préparation de la requête : ' . $conn->error);
     }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification si l'email existe
     if ($stmt->num_rows > 0) {
         // Récupérer le mot de passe haché et l'id de l'utilisateur
-        $stmt->bind_result($id_utilisateur, $hashedPassword, $nom, $prenom);
+        $stmt->bind_result($id_utilisateur, $hashedPassword, $nom, $prenom, $role);
         $stmt->fetch();
 
         // Vérifier si le mot de passe est correct
@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['email'] = $email;
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
+            $_SESSION['role'] = $role;
 
             // Rediriger vers la page d'accueil ou tableau de bord
             header("Location: ./compte.php");

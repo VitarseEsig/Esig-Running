@@ -59,10 +59,15 @@ $stmt_insert->bind_param("ii", $user_id, $id_entrainement);
 // Exécuter la requête d'insertion
 if ($stmt_insert->execute()) {
     echo "Inscription réussie !";
-    header("Refresh: 5; url=compte.php");
+    $_SESSION['messageInscription'] = "Inscription à l'entrainement réussie !";
+    $_SESSION['couleurMessageInscription'] = "alert-success";
+    header("Location: ./compte.php#inscriptions");
+    
 } else {
     echo "Erreur lors de l'inscription : " . $stmt_insert->error;
-    header("Refresh: 5; url=compte.php");
+    $_SESSION['messageInscription'] = "Echec de l'inscription à l'entraînement !";
+    $_SESSION['couleurMessageInscription'] = "alert-danger";
+    header("Location: ./compte.php#inscriptions");
 }
 
 // Fermer la connexion

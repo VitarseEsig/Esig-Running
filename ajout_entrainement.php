@@ -72,6 +72,6 @@ else{
 }
 $stmt->close();
 $conn->close();
-header("Location: ./compte membre.php#ajoutEntrainement");
+header("Location: ./compte.php#ajoutEntrainement");
 
 ?>

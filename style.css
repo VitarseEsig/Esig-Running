@@ -609,3 +609,15 @@ h5{
 .modal-titre{
     color: rgb(2,2,104);
 }
+#promotion{
+    background: rgba(204, 204, 204, 0.36);
+    justify-self: center;
+    border-radius: 2vw;
+    max-height: 20vw;
+}
+
+#utilisateurs{
+    overflow-y: scroll;
+    max-height: 10vw;
+
+}

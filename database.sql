@@ -1,10 +1,10 @@
--- USE bdd_7_4;
--- ALTER DATABASE bdd_7_4
--- CHARACTER SET utf8mb4
--- COLLATE utf8mb4_general_ci;
-CREATE DATABASE gestion_running
+USE bdd_7_4;
+ALTER DATABASE bdd_7_4
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
+-- CREATE DATABASE gestion_running
+-- CHARACTER SET utf8mb4
+-- COLLATE utf8mb4_general_ci;
 
 
 -- Table Utilisateur
